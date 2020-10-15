@@ -1,0 +1,29 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Description": "CLoud formation template for Services Catalog Master Portfolio Share; Label: labels/NVS2.0/PRD/",
+	"Parameters": {
+		"DedicatedResourceAccountNumber01": {
+			"Description": "Enter the Account Number for the Dedicated Resource Account",
+			"Type": "String"
+		},
+
+        "MasterPortfolioId": {
+			"Description": "Enter the Master Portfolio ID",
+			"Type": "String"
+		}
+	},
+	"Resources": {
+		"PortfolioShare01": {
+			"Type": "AWS::ServiceCatalog::PortfolioShare",
+			"Properties": {
+				"AccountId": {
+					"Ref": "DedicatedResourceAccountNumber01"
+				},
+				"PortfolioId": {
+					"Ref": "MasterPortfolioId"
+				}
+			}
+		}
+	}
+}
+	
